@@ -1,4 +1,4 @@
-FROM php:apache-stretch
+FROM php:5.6-apache-stretch
 
 LABEL maintainer "onisuly <onisuly@gmail.com>"
 
