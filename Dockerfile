@@ -14,4 +14,6 @@ RUN set -ex; \
     apt-get purge -y --auto-remove $BUILD_DEP;\
     rm -rf /var/lib/apt/lists/*;
 
+COPY config/php.ini /usr/local/etc/php/
+
 EXPOSE 80
