@@ -12,6 +12,6 @@ RUN set -ex; \
     mv you2php-master/* /var/www/html; \
     rm -rf master.zip you2php-master; \
     apt-get purge -y --auto-remove $BUILD_DEP;\
-    rm -rf /var/lib/apt/lists/*; \
+    rm -rf /var/lib/apt/lists/*;
 
 EXPOSE 80
