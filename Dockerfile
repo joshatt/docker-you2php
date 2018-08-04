@@ -1,4 +1,4 @@
-FROM php:5.6-apache-stretch
+FROM php:apache-stretch
 
 LABEL maintainer "onisuly <onisuly@gmail.com>"
 
@@ -13,6 +13,8 @@ RUN set -ex; \
     rm -rf master.zip you2php-master; \
     apt-get purge -y --auto-remove $BUILD_DEP;\
     rm -rf /var/lib/apt/lists/*;
+
+RUN a2enmod authz_groupfile
 
 COPY config/php.ini /usr/local/etc/php/
 
