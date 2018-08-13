@@ -21,8 +21,6 @@ COPY config/php.ini /usr/local/etc/php/
 COPY startup.sh /script/startup.sh
 RUN chmod +x /script/startup.sh
 
-VOLUME ["/var/www/html/config.php"] 
-
 EXPOSE 80
 
 CMD ["/script/startup.sh"]
