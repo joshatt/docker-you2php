@@ -7,8 +7,7 @@ ARG RUN_DEP="apache2-utils"
 
 RUN set -ex; \
     apt-get update; \
-    apt-get install -y --no-install-recommends $RUN_DEP; \
-    apt-get install -y --no-install-recommends $BUILD_DEP; \
+    apt-get install -y --no-install-recommends $BUILD_DEP $RUN_DEP; \
     wget --no-check-certificate https://github.com/You2php/you2php/archive/master.zip; \
     unzip master.zip; \
     mv you2php-master/* /var/www/html; \
