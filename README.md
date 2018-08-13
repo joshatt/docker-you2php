@@ -17,24 +17,19 @@ onisuly/you2php
 ```shell
 docker run -d --name you2php \
 -p 80:80 \
--v /your/path/.htpasswd:/var/www/html/.htpasswd \
--v /your/path/.htaccess:/var/www/html/.htaccess \
+-e SECURE=true \
+-e USERNAME=your_name \
+-e PASSWORD=your_password \
 onisuly/you2php
 ```
 
-The .htpasswd file example:
-```
-username:$apr1$J8Jy4qIF$mGB60T7Ol0fofzsu2dbjO.
-```
-You can generate a new .htpasswd file [here](http://www.htaccesstools.com/htpasswd-generator/)
+If you want to add multiple users, your can generate .htpasswd file [here](http://www.htaccesstools.com/htpasswd-generator/) and map it to your container.
 
-The .htaccess file example:
-```
-AuthName "Restricted Area"
-AuthType Basic
-AuthUserFile /var/www/html/.htpasswd
-AuthGroupFile /dev/null
-require valid-user
+```shell
+docker run -d --name you2php \
+-p 80:80 \
+-v /your/path/to/.htpasswd:/var/www/html/.htpasswd \
+onisuly/you2php
 ```
 
 ---
