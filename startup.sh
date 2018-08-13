@@ -11,7 +11,7 @@ if [ $SECURE = 'true' ]; then
 fi
 
 if [ -f /var/www/html/.htpasswd ]; then
-    echo "AuthName "Restricted Area"
+    echo "AuthName \"Restricted Area\"
 AuthType Basic
 AuthUserFile /var/www/html/.htpasswd
 AuthGroupFile /dev/null
