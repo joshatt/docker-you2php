@@ -23,7 +23,7 @@ docker run -d --name you2php \
 onisuly/you2php
 ```
 
-If you want to add multiple users, your can generate .htpasswd file [here](http://www.htaccesstools.com/htpasswd-generator/) and map it to your container.
+If you want to add multiple users, your can generate .htpasswd file [here](http://www.htaccesstools.com/htpasswd-generator/) and mount it to your container.
 
 ```shell
 docker run -d --name you2php \
