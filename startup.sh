@@ -16,6 +16,10 @@ AuthType Basic
 AuthUserFile /var/www/html/.htpasswd
 AuthGroupFile /dev/null
 require valid-user" > /var/www/html/.htaccess
+else
+    if [ -f /var/www/html/.htaccess ]; then
+        rm -f /var/www/html/.htaccess
+    fi
 fi
 
 apache2-foreground
