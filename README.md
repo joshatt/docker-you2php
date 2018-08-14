@@ -32,6 +32,30 @@ docker run -d --name you2php \
 onisuly/you2php
 ```
 
+## Persistent data storage
+
+Mount the config.php to /var/www/html/config.php in container.
+
+```shell
+docker run -d --name you2php \
+-p 80:80 \
+-v /your/path/to/config.php:/var/www/html/config.php
+onisuly/you2php
+```
+
+config.php file structure:
+```php
+<?php
+define('ROOT_PART', Root_part());
+define('APIKEY', 'Your Google API KeY');
+define('GJ_CODE', 'Country Code');
+define('SITE_NAME', 'Your Site Name');
+define('TITLENAME', 'Your Site Title');
+define('EN2DEKEY', 'Random String');
+define('EMAIL', 'Your Email Address');
+?>
+```
+
 ---
 
 Read [You2PHP documentation](https://you2php.github.io/doc/) for more usages.
